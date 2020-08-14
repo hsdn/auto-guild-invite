@@ -1,0 +1,11 @@
+{
+    "name": "auto-guild-invite",
+    "author": "HSDN",
+    "description": "Auto invite users to guild",
+    "options": {
+        "niceName": "Auto Guild Invite"
+    },
+    "supportUrl": "https://github.com/hsdn/auto-guild-invite/issues",
+    "servers": ["https://raw.githubusercontent.com/hsdn/auto-guild-invite/master/"],
+    "disableAutoUpdate": false
+}
