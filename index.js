@@ -13,7 +13,7 @@ module.exports = function GInvite(mod) {
 		if (!event.guildName && enabled) {
 			let delay = Math.random() * (max_delay - min_delay) + min_delay;
 			
-			setTimeout(()=> {
+			mod.setTimeout(()=> {
 				mod.toServer('C_INVITE_USER_TO_GUILD', 1, {
 					name: event.name
 				});
