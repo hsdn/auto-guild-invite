@@ -9,7 +9,7 @@ module.exports = function GInvite(mod) {
 		mod.command.message('Module ' + (enabled ? 'enabled' : 'disabled'));
 	});
 
-	mod.hook('S_SPAWN_USER', 16, event => {
+	mod.hook('S_SPAWN_USER', 17, event => {
 		if (!event.guildName && enabled) {
 			let delay = Math.random() * (max_delay - min_delay) + min_delay;
 			

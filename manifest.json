@@ -1,11 +1,11 @@
 {
     "files": {
         "README.MD": "2206c99dc97d7f90831099066f62d6ac65743470d3202bb7eb56cc082cd058df",
-        "index.js": "c950e46961f9f0a3366acee5db8370d309ecf4a555f5bfe59be5350083f4780c",
+        "index.js": "72b753ee89b46812ccf03377b80e740a4445fe8415c970755f094c88ebff3977",
         "module.json": "16136c6796bc61424ac3bc7357b8b8e858fa3be80f27b7b3db8d7e6f1f29eb9a"
     },
     "defs": {
         "C_INVITE_USER_TO_GUILD": 1,
-        "S_SPAWN_USER": [15,16]
+        "S_SPAWN_USER": [15,16,17]
     }
 }
