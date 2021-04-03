@@ -1,23 +1,24 @@
 
 module.exports = function GInvite(mod) {
-	let enabled   = false,
-		min_delay = 1000,
-		max_delay = 10000;
+	let enabled = false;
 
-	mod.command.add('ginv', () => {
+	const MIN_DELAY = 1000;
+	const MAX_DELAY = 10000;
+
+	mod.command.add(["ginv", "invg"], () => {
 		enabled = !enabled;
-		mod.command.message('Module ' + (enabled ? 'enabled' : 'disabled'));
+		mod.command.message(`Module ${ enabled ? "enabled" : "disabled"}`);
 	});
 
-	mod.hook('S_SPAWN_USER', 17, event => {
+	mod.hook("S_SPAWN_USER", 17, event => {
+		if (enabled) console.log(event.name, event.gameId);
+
 		if (!event.guildName && enabled) {
-			let delay = Math.random() * (max_delay - min_delay) + min_delay;
-			
-			mod.setTimeout(()=> {
-				mod.toServer('C_INVITE_USER_TO_GUILD', 1, {
-					name: event.name
-				});
+			const delay = Math.random() * (MAX_DELAY - MIN_DELAY) + MIN_DELAY;
+
+			mod.setTimeout(() => {
+				mod.toServer("C_INVITE_USER_TO_GUILD", 1, { name: event.name });
 			}, delay);
 		}
 	});
-}
+};
