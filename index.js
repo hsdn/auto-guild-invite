@@ -11,12 +11,12 @@ module.exports = function GInvite(mod) {
 		mod.command.message(`Module ${ enabled ? "enabled" : "disabled"}`);
 	});
 
-	mod.hook("S_SPAWN_USER", 17, event => {
+	mod.hook("S_SPAWN_USER", mod.majorPatchVersion == 92 ? 15 : 17, event => {
 		if (!event.guildName && enabled) {
 			const delay = Math.random() * (MAX_DELAY - MIN_DELAY) + MIN_DELAY;
 
 			mod.setTimeout(() => {
-				mod.toServer("C_INVITE_USER_TO_GUILD", 1, { name: event.name });
+				mod.send("C_INVITE_USER_TO_GUILD", 1, { name: event.name });
 			}, delay);
 		}
 	});
